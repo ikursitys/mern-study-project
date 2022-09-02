@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "jwtSecret": "top secret mern project",
+  "mongoUri": "mongodb+srv://ilonakursitys:2361Amg@cluster0.y9t1byi.mongodb.net/?retryWrites=true&w=majority"
+}
