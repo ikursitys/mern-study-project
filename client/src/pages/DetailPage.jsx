@@ -1,6 +1,4 @@
-import React from "react";
-import { useContext } from "react";
-import { useState, useCallback } from "react";
+import React, { useContext, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { useHttp } from "../hooks/http.hook";
 import { AuthContext } from "../context/AuthContext";

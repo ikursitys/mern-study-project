@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useHttp } from "../hooks/http.hook";
@@ -20,7 +19,6 @@ export const CreatePage = () => {
           },
           { Authorization: `Bearer ${auth.token}` }
         );
-        console.log("Data:", data);
         navigate(`/detail/${data.link._id}`);
       } catch (e) {}
     }

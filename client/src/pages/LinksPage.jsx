@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
-import { useCallback, useState, useContext } from "react";
+import React, { useCallback, useState, useContext, useEffect } from "react";
 import { Loader } from "../components/Loader";
 
 import { AuthContext } from "../context/AuthContext";
