@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import "./navbar.css";
 
 export const NavBar = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export const NavBar = () => {
   return (
     <nav>
       <div class="nav-wrapper indigo lighten-1">
-        <a href="/" class="brand-logo">
+        <a href="/" className="brand-logo">
           Сокращение ссылок
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
