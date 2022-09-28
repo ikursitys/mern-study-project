@@ -18,18 +18,18 @@ export const NavBar = () => {
     <nav>
       <div class="nav-wrapper indigo lighten-1">
         <a href="/" className="brand-logo">
-          Сокращение ссылок
+          Shorten your link!
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
-            <NavLink to="/create">Создать</NavLink>
+            <NavLink to="/create">Shorten</NavLink>
           </li>
           <li>
-            <NavLink to="/links">Ссылки</NavLink>
+            <NavLink to="/links">Links</NavLink>
           </li>
           <li>
             <a href="/" onClick={logoutHandler}>
-              Выйти
+              Log Out
             </a>
           </li>
         </ul>

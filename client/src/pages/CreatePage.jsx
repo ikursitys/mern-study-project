@@ -28,7 +28,7 @@ export const CreatePage = () => {
       <div className="col s8 offset-s2" style={{ paddingTop: "2rem" }}>
         <div className="input-field">
           <input
-            placeholder="Вставьте ссылку"
+            placeholder="Insert the link"
             id="link"
             type="text"
             value={link}
@@ -36,7 +36,7 @@ export const CreatePage = () => {
             onKeyPress={pressHandler}
           />
           <label htmlFor="link" className="active">
-            Введите ссылку
+            Insert your link
           </label>
         </div>
       </div>

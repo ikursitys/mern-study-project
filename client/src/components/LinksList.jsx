@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const LinksList = ({ links }) => {
   if (!links.length) {
-    return <p className="center">Ссылок пока нет</p>;
+    return <p className="center">There are no links yet...</p>;
   }
 
   return (
@@ -25,7 +25,7 @@ export const LinksList = ({ links }) => {
               <td>{link.from}</td>
               <td>{link.to}</td>
               <td>
-                <Link to={`/detail/${link._id}`}>Open</Link>
+                <Link to={`/detail/${link._id}`}>Open Link Page</Link>
               </td>
             </tr>
           );

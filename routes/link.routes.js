@@ -29,7 +29,9 @@ router.post("/generate", auth, async (req, res) => {
     await link.save();
     res.status(201).json({ link });
   } catch (e) {
-    res.status(500).json({ message: "Что-то пошло не так, попробуйте снова" });
+    res
+      .status(500)
+      .json({ message: "Something went wrong... Please, try again" });
   }
 });
 
@@ -38,7 +40,9 @@ router.get("/", auth, async (req, res) => {
     const links = await Link.find({ owner: req.user.userId });
     res.json(links);
   } catch (e) {
-    res.status(500).json({ message: "Что-то пошло не так, попробуйте снова" });
+    res
+      .status(500)
+      .json({ message: "Something went wrong... Please, try again" });
   }
 });
 
@@ -47,7 +51,9 @@ router.get("/:id", auth, async (req, res) => {
     const link = await Link.findById(req.params.id);
     res.json(link);
   } catch (e) {
-    res.status(500).json({ message: "Что-то пошло не так, попробуйте снова" });
+    res
+      .status(500)
+      .json({ message: "Something went wrong... Please, try again" });
   }
 });
 
