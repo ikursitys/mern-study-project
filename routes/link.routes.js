@@ -35,6 +35,25 @@ router.post("/generate", auth, async (req, res) => {
   }
 });
 
+// Delete a link
+
+router.post("/delete", auth, async (req, res) => {
+  try {
+    const link = await Link.findOne(req.params.id);
+
+    if (link) {
+      await link.remove();
+    }
+    res.status(200).json({});
+  } catch (e) {
+    res
+      .status(500)
+      .json({ message: "Something went wrong... Please, try again" });
+  }
+});
+
+//////
+
 router.get("/", auth, async (req, res) => {
   try {
     const links = await Link.find({ owner: req.user.userId });

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Loader = () => {
+export const Loader = () => (
   <div
     style={{ display: "flex", justifyContent: "center", paddingTop: "2rem" }}
   >
@@ -17,5 +17,5 @@ export const Loader = () => {
         </div>
       </div>
     </div>
-  </div>;
-};
+  </div>
+);
