@@ -19,13 +19,49 @@ export const LinksPage = () => {
     } catch (e) {}
   }, [token, request]);
 
+  const deleteHandler = async (id) => {
+    try {
+      await request(
+        "/api/link/delete",
+        "POST",
+        { id },
+        {
+          Authorization: `Bearer ${token}`,
+        }
+      );
+      fetchLinks();
+    } catch (e) {}
+  };
+
   useEffect(() => {
     fetchLinks();
   }, [fetchLinks]);
 
   if (loading) {
-    return Loader;
+    return <Loader />;
   }
 
-  return <>{!loading && <LinksList links={links} />}</>;
+  if (!links.length) {
+    return <p className="center">There are no links yet...</p>;
+  }
+
+  return (
+    <>
+      {!loading && (
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Original Link</th>
+              <th>Shortened Link</th>
+              <th>Open link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <LinksList links={links} deleteHandler={deleteHandler} />
+          </tbody>
+        </table>
+      )}
+    </>
+  );
 };

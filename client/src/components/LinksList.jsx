@@ -1,36 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./linkslist.css";
 
-export const LinksList = ({ links }) => {
-  if (!links.length) {
-    return <p className="center">There are no links yet...</p>;
-  }
-
+export const LinksList = ({ links, deleteHandler }) => {
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Original Link</th>
-          <th>Shortened Link</th>
-          <th>Open link</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {links.map((link, index) => {
-          return (
-            <tr key={link._id}>
-              <td>{index + 1}</td>
-              <td>{link.from}</td>
-              <td>{link.to}</td>
-              <td>
-                <Link to={`/detail/${link._id}`}>Open Link Page</Link>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <>
+      {links.map((link, index) => {
+        return (
+          <tr key={link._id}>
+            <td>{index + 1}</td>
+            <td>{link.from}</td>
+            <td>{link.to}</td>
+            <td>
+              <Link to={`/detail/${link._id}`}>Open Link Page</Link>
+            </td>
+            <td>
+              <button
+                className="btn red accent-2"
+                onClick={() => deleteHandler(link._id)}
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        );
+      })}
+    </>
   );
 };
